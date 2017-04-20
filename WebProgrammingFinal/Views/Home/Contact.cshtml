@@ -1,17 +1,39 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"].</h2>
+<h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<script src="~/js/site.js"></script>
+<h2 id='result'></h2>
+
+<form id="ContactFrm" action="mailto:st20084791@outlook.cardiffmet.ac.uk?Subject=ContactUs&message=" method="get">
+    <fieldset>
+        <div class="row">
+            <label for="name">Your name:</label><br />
+            <input id="name" class="input" name="name" type="text" value="" required size="30" /><br /> <br />
+        </div>
+        <div class="row">
+            <label for="email">Your email:</label><br />
+            <input id="email" class="input" name="email" type="text" value=""  required size="30" /><br /> <br />
+        </div>
+        <div class="row">
+            <label for="body">Your message:</label><br />
+            <textarea id="body" class="input" name="body" rows="7" cols="30" required></textarea><br /><br />
+        </div>
+        <input type="submit" id="validate" value="Send email" />
+
+    </fieldset>
+</form>
+<br />
+
 
 <address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    123 McDonald Farm<br />
+    Baltic Terrace<br />
+    Cardiff<br />
+    CF24 7AH
+    <br /> <br />
+    <abbr title="Phone">P:</abbr>
+    029 2041 6070
 </address>

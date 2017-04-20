@@ -27,7 +27,7 @@ namespace WebProgrammingFinal.Controllers
         // About Pageg
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "More About us";
 
             return View();
         }
@@ -35,7 +35,7 @@ namespace WebProgrammingFinal.Controllers
         // Contact Page
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Where to find us";
 
             return View();
         }
