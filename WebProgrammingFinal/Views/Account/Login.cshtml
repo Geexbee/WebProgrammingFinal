@@ -1,0 +1,31 @@
+﻿@model WebProgrammingFinal.Model.UserAccount
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<form class="form-horizontal" asp-controller="Account" asp-action="Login" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Username" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Username" class="FormControl" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Password" class="FormControl" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-default">Login</button>
+            <button type="reset" class="btn btn-default">Clear</button>
+            <p>Don't have an account? <a asp-area="" asp-controller="Account" asp-action="Register">Register Here</a>!</p>
+        </div>
+    </div>
+</form>
