@@ -7,5 +7,5 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace WebProgrammingFinal.Controllers
 {
-    // Admin and user roles to bet setup, aswell as the admin only area.
+    // Admin and user roles to be setup, aswell as the admin only area.
 }

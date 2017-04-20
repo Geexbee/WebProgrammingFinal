@@ -34,14 +34,17 @@ namespace WebProgrammingFinal.Controllers
                 if (registered != null)
                 {
                     ModelState.Clear();
-                    ModelState.AddModelError("", "Email address in use");
+                    // Could be further seperated so they know if its a username or an email thats duplicated (Neested if? registeredUser & registeredEmail)
+                    ViewBag.Message = "Username or Email address is taken.";
+                    // ModelState.AddModelError("", "Email address in use");
                 }
                 else
                 {
                     // Database updated here. ### duplicate issue ###
                     _context.UserAccount.Add(user);
                     _context.SaveChanges();
-
+                    
+                    // Clear form & show succsess
                     ModelState.Clear();
                     ViewBag.Message = user.Username + " has registered successfully.";
                 }
@@ -72,7 +75,7 @@ namespace WebProgrammingFinal.Controllers
             }
             return View();
         }
-
+        // Welcome Page
         public ActionResult Welcome()
         {
             if (HttpContext.Session.GetString("UserID") != null)
@@ -85,7 +88,7 @@ namespace WebProgrammingFinal.Controllers
                 return RedirectToAction("Login");
             }
         }
-
+        // Logout Function
         public ActionResult Logout()
         {
             HttpContext.Session.Clear();
