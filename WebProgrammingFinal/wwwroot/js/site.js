@@ -1,38 +1,33 @@
-﻿function validateEmail(email)
-{
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-}
+﻿function checkName() {
 
-function validateName(name)
-{
-    var re = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/
-    return re.test(name)
-}
+    var textField = document.getElementById("name");
+    var regexField = /^[a-zA-Z ]+$/;
 
-function validate()
-{
-
-    var name = $("#name").val();
-    if (validateEmail(name))
-    {
+    if (textField.value.match(RegExp(regexField))) {
+        return true;
     }
-    else
-    {
-        alert("Please enter a valid Name");
+    else {
+        alert("Please enter a valid name");
+        return false;
     }
-
-  var email = $("#email").val();
-  if (validateEmail(email))
-  {
-  }
-  else
-  {
-      alert("Please enter a valid E-Mail Address");
-  }
-
- 
-  return false;
 }
 
-$("#validate").bind("click", validate);
+
+function checkEmail() {
+
+    var textField = document.getElementById("email");
+    var regexField = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (textField.value.match(RegExp(regexField))) {
+        return true;
+    }
+    else {
+        alert("Please enter a valid E-Mail Address");
+        return false;
+    }
+}
+
+function checkContactForm() {
+    checkName();
+    checkEmail();
+   }
